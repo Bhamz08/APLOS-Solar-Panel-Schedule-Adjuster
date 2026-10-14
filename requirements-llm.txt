@@ -1,0 +1,4 @@
+# Optional: local Gemma 2B inference through llama.cpp.
+# CPU-only prebuilt wheels avoid needing a C++ compiler:
+#   pip install -r requirements-llm.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+llama-cpp-python>=0.3.2

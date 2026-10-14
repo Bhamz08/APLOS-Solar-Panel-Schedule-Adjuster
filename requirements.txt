@@ -1,0 +1,6 @@
+# Core runtime (pipeline, scheduler, dashboard)
+pydantic>=2.6,<3
+requests>=2.31,<3
+python-dotenv>=1.0,<2
+tzdata>=2024.1          # IANA time zones on Windows
+streamlit>=1.36,<2      # dashboard; also provides pandas and altair

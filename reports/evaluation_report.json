@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-10-14T04:19:49+00:00",
+  "dataset": "synthetic_5_weeks.json",
+  "dataset_kind": "synthetic",
+  "decision_mode": "deterministic rules only",
+  "model_note": null,
+  "metrics": {
+    "total": 105,
+    "correct": 84,
+    "accuracy_pct": 80.0,
+    "rain_events": {
+      "total": 32,
+      "correct": 22,
+      "accuracy_pct": 68.8
+    },
+    "sand_events": {
+      "total": 19,
+      "correct": 16,
+      "accuracy_pct": 84.2
+    },
+    "no_event": {
+      "total": 59,
+      "correct": 51,
+      "accuracy_pct": 86.4
+    },
+    "by_truth_event": {
+      "rain": {
+        "total": 27,
+        "correct": 17,
+        "accuracy_pct": 63.0
+      },
+      "none": {
+        "total": 59,
+        "correct": 51,
+        "accuracy_pct": 86.4
+      },
+      "sand": {
+        "total": 14,
+        "correct": 11,
+        "accuracy_pct": 78.6
+      },
+      "rain+sand": {
+        "total": 5,
+        "correct": 5,
+        "accuracy_pct": 100.0
+      }
+    },
+    "false_postponements": 8,
+    "missed_postponements": 11,
+    "wrong_adjustment_type": 2,
+    "undetermined": 0,
+    "adjust_vs_proceed_accuracy_pct": 81.9,
+    "confusion": {
+      "CLEAN->CLEAN": 51,
+      "CLEAN->POSTPONE": 8,
+      "POSTPONE->CLEAN": 9,
+      "POSTPONE->POSTPONE": 28,
+      "POSTPONE->SKIP": 1,
+      "SKIP->CLEAN": 2,
+      "SKIP->POSTPONE": 1,
+      "SKIP->SKIP": 5
+    }
+  }
+}
