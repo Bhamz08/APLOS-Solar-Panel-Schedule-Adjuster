@@ -167,7 +167,7 @@ def render() -> None:
                 _save(s)
         path = Path(resolve_model_path(m))
         st.markdown("**Installation check**")
-        st.write(f"- Model file: `{path}` — {'found' if path.is_file() else '**not found**'}")
+        st.write(f"- Model file: `{env.display_path(path)}` — {'found' if path.is_file() else '**not found**'}")
         st.write(f"- llama-cpp-python: {'installed' if LlamaCppBackend.library_available() else '**not installed**'}")
         if st.button("Load model and test"):
             with st.spinner("Loading model…"):
@@ -184,4 +184,4 @@ def render() -> None:
                        "Mock weather data is never applied automatically; with no trustworthy data no change is made.")
             if st.form_submit_button("Save automation settings", type="primary"):
                 _save(s)
-        st.markdown(f"**Storage** — database `{env.db_path()}`, logs `{env.log_dir()}`")
+        st.markdown(f"**Storage** — database `{env.display_path(env.db_path())}`, logs `{env.display_path(env.log_dir())}`")

@@ -75,7 +75,9 @@ class LlamaCppBackend:
         if self._llm is not None:
             return
         if not self.model_path.is_file():
-            raise BackendUnavailableError(f"Model file not found: {self.model_path}")
+            from aplos.config.env import display_path
+
+            raise BackendUnavailableError(f"Model file not found: {display_path(self.model_path)}")
         try:
             from llama_cpp import Llama
         except ImportError as exc:

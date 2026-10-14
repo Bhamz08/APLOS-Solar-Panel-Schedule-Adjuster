@@ -29,6 +29,15 @@ def resolve_project_path(value: str | os.PathLike[str]) -> Path:
     return path if path.is_absolute() else PROJECT_ROOT / path
 
 
+def display_path(path: str | os.PathLike[str]) -> str:
+    """Path relative to the project when inside it (keeps user folders out of UI and logs)."""
+    p = Path(path)
+    try:
+        return str(p.resolve().relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(p)
+
+
 def data_dir() -> Path:
     path = resolve_project_path(os.environ.get(ENV_DATA_DIR, "data"))
     path.mkdir(parents=True, exist_ok=True)

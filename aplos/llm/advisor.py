@@ -132,7 +132,7 @@ def build_advisor(settings: LLMSettings, preload: bool = False) -> LLMAdvisor:
     path = resolve_model_path(settings)
     backend = LlamaCppBackend(env.resolve_project_path(path), settings.n_ctx, settings.n_threads, settings.n_gpu_layers)
     if not backend.model_path.is_file():
-        return LLMAdvisor(None, settings, f"Model file not found: {backend.model_path}")
+        return LLMAdvisor(None, settings, f"Model file not found: {env.display_path(backend.model_path)}")
     if not LlamaCppBackend.library_available():
         return LLMAdvisor(None, settings, "llama-cpp-python is not installed")
     if preload:

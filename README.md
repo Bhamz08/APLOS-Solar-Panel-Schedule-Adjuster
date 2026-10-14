@@ -11,6 +11,12 @@ explains its recommendation. Schedules, cached forecasts, configuration and the
 full decision history are stored locally in SQLite. A Streamlit dashboard is
 provided for operators.
 
+![Dashboard](docs/images/dashboard.png)
+
+| Weather | Schedule | Decision history |
+|---|---|---|
+| ![Weather](docs/images/weather.png) | ![Schedule](docs/images/schedule.png) | ![Decision history](docs/images/history.png) |
+
 > **Connectivity.** Model inference and all decision-making run locally and no
 > forecast data is sent to a cloud LLM. Retrieving forecasts from a weather API
 > still requires internet access. When offline, the system uses the latest cached
@@ -328,7 +334,7 @@ python -m aplos simulate [--generate] [--weeks 5] [--seed 42] [--llm disabled|mo
 .venv/bin/python -m pytest
 ```
 
-The 102 tests cover:
+The 107 tests cover:
 
 - rain, heavy rain and sand/dust before or after cleaning;
 - favorable weather and marginal rain;
@@ -342,7 +348,7 @@ The 102 tests cover:
 - configurable run times and time zones;
 - duplicate execution prevention, same-day idempotency and crash recovery with catch-up;
 - retries, approvals, rejections, conflicts and superseded recommendations;
-- decision history, the CLI and headless dashboard rendering (Streamlit AppTest).
+- decision history, rolling plan extension, the CLI and headless dashboard rendering (Streamlit AppTest).
 
 ## Simulation and evaluation
 
